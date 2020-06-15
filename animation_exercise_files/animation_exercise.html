@@ -22,12 +22,20 @@
 			color: #fff; 
 			background-color: #00c; 
 			border: 2px solid #006; 
-			border-radius: 5px; }
+			border-radius: 5px; 
+		}
+		li {
+                background-color: silver;
+                list-style-type: none;
+                cursor: pointer;
+        }
+
 	</style>
 </head>
 <body>
 
-	<h1>jQuery Animation</h1>
+<!-- basic ex 1 -->
+	<!-- <h1>jQuery Animation</h1>
 
 	<div id="animate">ANIMATE</div>
 
@@ -37,7 +45,37 @@
                 a.show("very-slow").delay("5000").hide("very-slow");
 				// a.delay("5000");
                 // a.hide("very-slow");
+	</script> -->
+
+
+
+
+<!-- basic ex 2 -->
+ 
+	<div id="customAnimation">
+		<h1>Custom Animation</h1>
+	</div>
+	<ul>
+		<li>Task 1</li>
+		<li>Task 2</li>
+		<li>Task 3</li>
+		<li>Task 4</li>
+		<li>Task 5</li>
+	</ul>
+
+	<script>
+		$(document).ready(function() {
+			$('li').on('click', function() {
+				$(this).animate({
+					opacity: 0.0,
+					paddingLeft: '+=80'
+					}, 500, function() {
+					$(this).remove();
+				});
+			});
+		});
 	</script>
+
 
 </body>
 </html>
